@@ -1,0 +1,52 @@
+﻿# Formula létrehozása
+	Formula "nev" = new Formula(<stirng>)
+
+# Formulák összefűzése
+	Formula "nev" = <Formula> <operátor> <Formula> ...
+
+## Operátorok
+	- = negáció
+	* = és
+	+ = vagy
+	> = akkor
+	< = akkor (ugyan az, csak akkor megcseréli a tagokat)
+	== = akkor és csak akkor
+	!= = kizáró vagy
+
+# Lekérdező Függvények
+
+## Negaciók száma: hány negáció van a formulában
+	"formula neve".Negaciok_szama() -> int
+
+## Levelek száma : hány különböző levélre bomlik le a fa
+	"formula neve".Levelek_száma() -> int
+
+## Atomjai: hány különböző alapformulából épül fel (atomból)
+	"formula neve".Atomjai() -> HashSet<Formula>
+
+## Mélység és Mélység2 (ugyan az): hány emelet magas a formula fa
+	"formula neve".Mélység() -> int
+
+## Részformulái: fában találgható összes részformula halmaza
+	"formula neve".Részformulái() -> HashSet<Formula>
+
+## Atomi: megadja, hogy atom-e a formula, imnt pl.: a, q, p
+	"formula neve".Atomi() -> bool
+
+## Pozitív literál: Ugyan az mint az atomi
+	"formula neve".Pozitív_literál() -> bool
+
+## Negatív literál: tagadott-e az atomi formula
+	"formula neve".Negatív_literál() -> bool
+
+## Literál: visszadja, hogy literál-e
+	"formula neve".Literál() -> bool
+
+## Modelljei: megadja a formula modeljeit
+	Modelljei(<HashSet<Formula>> "formula neve") -> HashSet<Dictionary<Formula, bool>>
+
+## Modellek kiírása: kiírja a modelleket
+	Modellek_kiirasa(HashSet<Dictionary<Formula, bool>> "modellek")
+
+# Tolatóudvar
+	Tolatóudvar(<string>) -> Stack<string>
